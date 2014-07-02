@@ -63,7 +63,7 @@ def travis():
         skuld.send_message('[imgtl] CI Build #%s was started on travis. to check out: %s' % (json['number'], json['build_url']))
     elif json['status_message'] == 'Errored':
         skuld.send_message('[imgtl] CI Build #%s was \002errored\x0f. to check out: %s' % (json['number'], json['build_url']))
-    elif json['status_message'] == 'Failed' or json['status_message'] == 'Still Failing':
+    elif json['status_message'] == 'Broken' or json['status_message'] == 'Failed' or json['status_message'] == 'Still Failing':
         skuld.send_message('[imgtl] CI Build #%s was \002failed\x0f. to check out: %s' % (json['number'], json['build_url']))
     return ''
 
